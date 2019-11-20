@@ -1,0 +1,36 @@
+{% extends "app1/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+      <h3>Table 1 </h3>
+      <table style="width:100%">
+        <tr>
+          <th>Roll Number</th>
+          <th>Name</th>
+          <th>Subject</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+              <td>{{student.roll_no}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.subject}}</td>
+            </tr>
+        {% endfor %}
+      </table>
+    <div>
+      <br>
+      <h3> Table 2 </h3>
+      <table style="width:100%">
+        <tr>
+          <th>Roll Number</th>
+          <th>Marks</th>
+        </tr>
+        {% for mark in marks%}
+        <tr> 
+          <th>{{mark.roll_no}} </th>
+          <th>{{mark.marks}}</th>
+        </tr>
+        {% endfor %}
+      </table>
+      </div>
+{% endblock content %}
